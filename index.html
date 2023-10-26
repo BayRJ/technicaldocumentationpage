@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <h1></h1>
+    <ul>
+      <li><a class="nav-link" href="#introduction">Introduction</a></li>
+      <li><a class="nav-link" href="#python-actions">What can Python do?</a></li>
+      <li><a class="nav-link" href="#print">Print</a></li>
+      <li><a class="nav-link" href="#functions">Functions</a></li>
+      <li><a class="nav-link" href="#python-classes">Python Classes</a></li>
+      <li><a class="nav-link" href="#attributes">Attributes</a></li>
+      <li><a class="nav-link" href="#methods">Methods</a></li>
+      <li><a class="nav-link" href="#special-methods">Special Method</a></li>
+      <li><a class="nav-link" href="#decorators">Decorators</a></li>
+
+
+    </ul>
+  </nav>
+  <main id="main-doc">
+
+    <section class="main-section" id="introduction">
+      <h2>Introduction to Python</h2>
+      <p>Python is a widely used general-purpose, high level programming language. It was created by Guido van Rossum in 1991 and further 
+        developed by the Python Software Foundation. It was designed with an emphasis on code readability, and its syntax allows programmers 
+        to express their concepts in fewer lines of code.
+        Python is a programming language that lets you work quickly and integrate systems more efficiently.
+        There are two major Python versions: Python 2 and Python 3. Both are quite different.
+        It is used for:</p>
+      <ul>
+        <li>web development(server-side),</li>
+        <li>software development,</li>
+        <li>mathematics</li>
+      </ul>
+    </section>
+    <section class="main-section" id="python-actions">
+      <h2>What can Python do?</h2>
+      <p>This shows what can Python be used to:</p>
+      <ul>
+        <li>Python can be used on a server to create web applications.</li>
+        <li>Python can be used alongside software to create workflows.</li>
+        <li>Python can connect to database systems. It can also read and modify files.</li>
+      </ul>
+    </section>
+    <section class="main-section" id="print">
+      <h2>Print Statement</h2>
+      <p>
+        The print() function prints the specified message to the screen, or other standard output device.
+        The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+        This is how you display a statement using Python:</p>
+      <code>print("GeeksQuiz") </code>
+    </section>
+    <section class="main-section" id="functions">
+      <h2>Functions: the Basics</h2>
+      <p>In Python, defining the function works as follows. def is the keyword for defining a function. The function name is followed by parameter(s) in (). 
+        The colon : signals the start of the function body, which is marked by indentation. Inside the function body, the return statement determines the 
+        value to be returned. After function definition is complete, calling the function with an argument returns a value.</p>
+      <code>
+        >>> def f(x):
+        return x**2 + 1
+        >>> f(4)
+        17
+        >>> 
+      </code>
+    </section>
+    <section class="main-section" id="python-classes">
+      <h2>What is a class?</h2>
+      <p>
+        A class is a code template for creating objects. Objects have member variables and have behaviour associated with them. 
+        In python a class is created by the keyword class. An object is created using the constructor of the class. 
+        This object will then be called the instance of the class. In Python we create instances in the following manner
+      </p>
+      <code>Instance = class(arguments)</code>
+    </section>
+    <section class="main-section" id="attributes">
+      <h2>Attributes</h2>
+      <p>
+        A class by itself is of no use unless there is some functionality associated with it. Functionalities are defined by setting attributes, 
+        which act as containers for data and functions related to those attributes. Those functions are called methods.
+      </p>
+      <code>
+        >>> class Snake:
+        ...     name = "python" # set an attribute `name` of the class
+      </code>
+    </section>
+    <section class="main-section" id="methods">
+      <h2>Methods</h2>
+      <p>
+        Once there are attributes that “belong” to the class, you can define functions that will access the class attribute. 
+        These functions are called methods. When you define methods, you will need to always provide the first argument to the method with a self keyword.
+      </p>
+      <code>
+        >>> class Snake:
+...     name = "python"
+...     
+...     def change_name(self, new_name): # note that the first argument is self
+...         self.name = new_name # access the class attribute with the self keyword
+      </code>
+    </section>
+    <section class="main-section" id="special-methods">
+      <h2>Special Methods</h2>
+      <p>
+        All the built-in data types implement a collection of special object methods. The names of special methods are always preceded and followed by double 
+        underscores (__). These methods are automatically triggered by the interpreter as a program executes. For example, the operation x + y is mapped to an 
+        internal method, x.__add__(y), and an indexing operation, x[k], is mapped to x.__getitem__(k). The behavior of each data type depends entirely on the 
+        set of special methods that it implements.
+      </p>
+      <p>
+        User-defined classes can define new objects that behave like the built-in types simply by supplying an appropriate subset of the special methods described 
+        in this section. In addition, built-in types such as lists and dictionaries can be specialized (via inheritance) by redefining some of the special methods.
+      </p>
+      <code>__new__(cls [,*args [,**kwargs]])</code>
+    </section>
+    <section class="main-section" id="decorators">
+      <h2>Python decorators</h2>
+      <p>
+        In Python, a decorator is a design pattern that allows you to modify the functionality of a function by wrapping it in another function.
+        The outer function is called the decorator, which takes the original function as an argument and returns a modified version of it.
+      </p>
+      <p>
+        Before we learn about decorators, we need to understand a few important concepts related to Python functions. 
+        Also, remember that everything in Python is an object, even functions are objects.
+      </p>
+
+      <code>
+        def outer(x):
+          def inner(y):
+            return x + y
+          return inner
+
+        add_five = outer(5)
+        result = add_five(6)
+        print(result)  # prints 11
+      </code>
+    </section>
+  </main>
+</body>
+</html>
